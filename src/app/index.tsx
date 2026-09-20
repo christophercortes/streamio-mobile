@@ -1,13 +1,16 @@
-import { Pressable, StyleSheet, View, Text } from 'react-native';
+import { Colors } from '@/constants/theme';
+import { Image, Pressable, StyleSheet, View, Text } from 'react-native';
 import { router } from 'expo-router';
 
 export default function Welcome() {
     return (
         <View style={styles.container}>
-            <View>
-                <Text style={styles.title}>
-                    Streamio+
-                </Text>
+            <View style={styles.content}>
+                <Image
+                    source={require('@/assets/images/logo.png')}
+                    style={styles.logo}
+                    resizeMode='contain'
+                />
                 <Text style={styles.subtitle}>
                     Watch your favorite channels anytime, anywhere.
                 </Text>
@@ -15,7 +18,7 @@ export default function Welcome() {
 
             <Pressable
                 style={styles.button}
-                onPress={() => router.push("/home")}
+                onPress={() => router.push('/home')}
             >
                 <Text style={styles.buttonText}>
                     Get Started
@@ -28,34 +31,43 @@ export default function Welcome() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        padding: 24,
-        justifyContent: "space-between",
+        paddingHorizontal: 24,
+        paddingBottom: 40,
+        justifyContent: 'space-between',
     },
 
-    title: {
-        fontSize: 32,
-        fontWeight: "bold",
-        marginTop: 80,
+    content: {
+        alignItems: "center",
+        marginTop: 100,
+    },
+
+    logo: {
+        width: 300,
+        height: 200,
+        marginTop: 2,
     },
 
     subtitle: {
+        color: Colors.dark.textSecondary,
         fontSize: 18,
-        marginTop: 16,
-        color: "#666",
         lineHeight: 26,
+        textAlign: "center",
+        marginTop: 12,
+        maxWidth: 320,
     },
 
     button: {
-        backgroundColor: "#000",
+        backgroundColor: Colors.light.background,
         paddingVertical: 16,
         borderRadius: 12,
-        alignItems: "center",
-        marginBottom: 30,
+        alignItems: 'center',
+        width: '100%',
+        marginBottom: 40,
     },
 
     buttonText: {
-        color: "#fff",
+        color: Colors.light.text,
         fontSize: 16,
-        fontWeight: "bold",
+        fontWeight: 'bold',
     }
 });
