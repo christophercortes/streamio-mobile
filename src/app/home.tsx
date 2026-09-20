@@ -1,4 +1,5 @@
 import { Pressable, StyleSheet, View, Text, ScrollView } from 'react-native';
+import { Colors } from '@/constants/theme';
 
 export default function Home() {
     return (
@@ -87,16 +88,16 @@ export default function Home() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: "#fff",
+        marginBottom: 100,
     },
 
     header: {
         paddingHorizontal: 24,
         paddingTop: 24,
-        paddingBottom: 16,
     },
 
     logo: {
+        color: Colors.dark.text,
         fontSize: 28,
         fontWeight: "bold",
     },
@@ -104,11 +105,10 @@ const styles = StyleSheet.create({
     greeting: {
         marginTop: 6,
         fontSize: 16,
-        color: "#666",
+        color: Colors.dark.textSecondary,
     },
 
     section: {
-        marginTop: 16,
         paddingHorizontal: 24,
     },
 
